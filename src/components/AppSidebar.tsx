@@ -26,7 +26,8 @@ export function AppSidebar() {
             key={item.to}
             to={item.to}
             activeOptions={{ exact: item.to === "/" }}
-            className="flex min-h-14 items-center gap-3 rounded-xl px-4 py-4 text-lg transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-clay"
+            className="flex min-h-14 items-center gap-3 rounded-xl px-4 py-4 text-lg transition-colors hover:bg-cream/10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-clay"
+            activeProps={{ className: "bg-cream hover:bg-cream" }}
           >
             {({ isActive }) => (
               <span
