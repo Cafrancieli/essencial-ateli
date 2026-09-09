@@ -26,11 +26,14 @@ export function AppSidebar() {
             key={item.to}
             to={item.to}
             activeOptions={{ exact: item.to === "/" }}
-            className="flex min-h-14 items-center gap-3 rounded-xl px-4 py-4 text-lg font-medium text-cream/90 transition-colors hover:bg-cream/10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-clay"
-            activeProps={{ className: "bg-cream text-brand-deep font-semibold hover:bg-cream" }}
+            className="flex min-h-14 items-center gap-3 rounded-xl px-4 py-4 text-lg transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-clay"
           >
             {({ isActive }) => (
-              <>
+              <span
+                className={`flex w-full items-center gap-3 ${
+                  isActive ? "font-semibold text-brand-deep" : "font-medium text-cream"
+                }`}
+              >
                 <span
                   aria-hidden="true"
                   className={
@@ -42,7 +45,7 @@ export function AppSidebar() {
                   {item.numero}
                 </span>
                 {item.rotulo}
-              </>
+              </span>
             )}
           </Link>
         ))}
